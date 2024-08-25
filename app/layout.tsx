@@ -1,22 +1,29 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Cross League Champions",
-  description: "Champion the Cross-League Fantasy Revolution!",
+	title: "Cross League Champions",
+	description: "Champion the Cross-League Fantasy Revolution!",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className="new-amsterdam-regular">
+				<div
+					className="min-h-screen bg-cover bg-center bg-fixed"
+					style={{ backgroundImage: "url('/arenasss.jpg')" }}
+				>
+					<Navbar />
+					{children}
+				</div>
+			</body>
+		</html>
+	);
 }
